@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "asset-tracker-backend"
+version = "0.1.0"
+description = "FastAPI backend for real-time hardware inventory tracking"
+authors = ["Ryan <ryan@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.103.1"
+uvicorn = "^0.23.2"
+sqlalchemy = "^2.0.21"
+asyncpg = "^0.28.0"
+motor = "^3.3.1"
+pydantic = "^2.4.2"
+pydantic-settings = "^2.0.3"
+sse-starlette = "^1.6.5"
