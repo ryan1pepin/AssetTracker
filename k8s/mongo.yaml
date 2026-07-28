@@ -30,7 +30,10 @@ spec:
         - name: MONGO_INITDB_ROOT_USERNAME
           value: root
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: rootpassword
+          valueFrom:
+            secretKeyRef:
+              name: mongo-credentials
+              key: root-password
         ports:
         - containerPort: 27017
         volumeMounts:

@@ -18,9 +18,15 @@ spec:
         imagePullPolicy: IfNotPresent
         env:
         - name: POSTGRES_URL
-          value: "postgresql+asyncpg://asset_user:asset_password@postgres:5432/asset_tracker"
+          valueFrom:
+            secretKeyRef:
+              name: postgres-credentials
+              key: connection-uri
         - name: MONGO_URL
-          value: "mongodb://root:rootpassword@mongo:27017"
+          valueFrom:
+            secretKeyRef:
+              name: mongo-credentials
+              key: connection-uri
         - name: POLL_INTERVAL
           value: "15.0"
         - name: ENABLE_SPIKES

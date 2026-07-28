@@ -28,11 +28,20 @@ spec:
         image: postgres:15-alpine
         env:
         - name: POSTGRES_USER
-          value: asset_user
+          valueFrom:
+            secretKeyRef:
+              name: postgres-credentials
+              key: username
         - name: POSTGRES_PASSWORD
-          value: asset_password
+          valueFrom:
+            secretKeyRef:
+              name: postgres-credentials
+              key: password
         - name: POSTGRES_DB
-          value: asset_tracker
+          valueFrom:
+            secretKeyRef:
+              name: postgres-credentials
+              key: database
         ports:
         - containerPort: 5432
         volumeMounts:
