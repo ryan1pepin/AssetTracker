@@ -2,7 +2,7 @@
 name = "asset-tracker-backend"
 version = "0.1.0"
 description = "FastAPI backend for real-time hardware inventory tracking"
-authors = ["Ryan <ryan@example.com>"]
+authors = ["Ryan Pepin <ryan1pepin@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
